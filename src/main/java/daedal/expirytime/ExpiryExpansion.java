@@ -27,7 +27,7 @@ public class ExpiryExpansion extends PlaceholderExpansion implements Configurabl
 
     @Override
     public @NotNull String getIdentifier() {
-        return "expirytime";
+        return "expirytimeNotColor";
     }
 
     @Override
@@ -44,10 +44,10 @@ public class ExpiryExpansion extends PlaceholderExpansion implements Configurabl
     public Map<String, Object> getDefaults() {
         Map<String, Object> defaults = new HashMap<>();
         defaults.put("numbers_color", "&7");
-        defaults.put("never", "&6∞");
-        defaults.put("days", "&6 дн.");
-        defaults.put("hours", "&6 ч.");
-        defaults.put("minutes", "&6 мин.");
+        defaults.put("never", "∞");
+        defaults.put("days", " дн.");
+        defaults.put("hours", " ч.");
+        defaults.put("minutes", " мин.");
         return defaults;
     }
 
@@ -57,10 +57,10 @@ public class ExpiryExpansion extends PlaceholderExpansion implements Configurabl
         Collection<Node> nodes = Objects.requireNonNull(userManager.getUser(p.getUniqueId())).getNodes();
         String invalid_group = this.getString("invalid_group", "&cНЕИЗВЕСТНАЯ ГРУППА");
         String numbers_color = this.getString("numbers_color", "&7");
-        String never = this.getString("never", "&6∞") ;
-        String days = this.getString("days", "&6 дн.");
-        String hours = this.getString("hours", "&6 ч.");
-        String minutes = this.getString("minutes", "&6 мин.");
+        String never = this.getString("never", "∞") ;
+        String days = this.getString("days", " дн.");
+        String hours = this.getString("hours", " ч.");
+        String minutes = this.getString("minutes", " мин.");
         String[] params = prompt.split("_");
         String permission;
         switch (params[0]) {
